@@ -1,0 +1,75 @@
+rset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>Task List Proect</title>
+    <style>input[type=text], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      input[type=date] {
+          width: 50%
+      }
+      
+      input[type=submit] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      input[type=submit]:hover {
+        background-color: #454ba0;
+      }
+      </style>
+</head>
+<body>
+    <header> 
+        <Nav><h2>Task List</h2></Nav>
+    </header>
+    <h3>New Task</h3>
+    <div>
+        <form action="/action_page.php">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder=" ">
+      
+          <label for="desc">Description</label>
+          <input type="text" id="desc" name="Description" placeholder=" ">
+      
+          <label for="assignedto">Assigned To</label>
+          <select id="task" name="task">
+            <option value="Others"></option>
+            <option value="Task-1">Task-1</option>
+            <option value="Task-2">Task-2</option>
+            <option value="Task-3">Task-3</option>
+            <option value="Task-4">Task-4</option>
+            <option value="Task-5">Task-5</option>
+          </select>
+
+          <label for="status">Status</label>
+          <select id="status" name="Status">
+            <option value="none"></option>
+            <option value="ondesign">Designing</option>
+            <option value="inprogress">Inprogress</option>
+            <option value="testing">Testing</option>
+            <option value="incomplete">Incomplete</option>
+            <option value="completed">Completed</option>
+          </select>
+
+          <label for="Date">Deu Date</label><br><br>
+          <input type="date" value="mm-dd-yyyy"><br><br>
+
+        <input type="submit" value="Add Task"><br><br>
+          
+        </form>
+      </div>
+</body>
+</html>
