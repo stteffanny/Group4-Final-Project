@@ -11,19 +11,14 @@ ___
 - Implement the basic HTML structure of Wireframe design  
 - Implement Task planner form  
 - Implement Task Cards  
-- Code Stylesheet initialized with 2 unused (for the moment) classes  
+- Implement Stylesheet initialized  
 - Resize background images for the web  
 
 **Screenshots**  
 
-#### 1
+#### Task Planner section
 <img src="https://user-images.githubusercontent.com/95151579/151500454-96cd0367-d56c-455f-98d0-6657d1a20cd3.png" width="600" />
 
-#### 2
+#### Task Card section
 <img src="https://user-images.githubusercontent.com/95151579/151500456-4fee1ef1-548b-4b85-a02b-8f46199c789b.png" width="600" />
-
 ___
-
-
-
-
