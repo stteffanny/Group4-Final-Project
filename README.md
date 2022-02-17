@@ -13,7 +13,11 @@ ___
 - Implement Task Cards  
 - Implement Stylesheet initialized  
 - Resize background images for the web  
+___
 
+// ###### XX/XX/XX @XXXX
+// **Task X Summary**  
+___
 **Screenshots**  
 
 #### Task Planner section
