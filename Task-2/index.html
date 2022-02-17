@@ -1,16 +1,22 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <title>Task List</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--<link rel="stylesheet" href="css/reset.css"> -->
     <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
+    <link rel="stylesheet" href="css/dj-styles.css">
+
+</head>
+
+<body>
 
     <section id="header" class="jumbotron border-bottom">
         <div class="container">
@@ -21,112 +27,220 @@
     </section>
 
     <section id="task-add">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <form>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <form>
 
-                    <div class="">
-                        <label for="task" class="form-label"><h4>Task Name</h4></label>
-                        <input type="text" class="form-control mb-5" id="task" placeholder="Is this task S.M.A.R.T.">
-                       
-                        <label for="assignee" class="form-label"><h4>Assigned To</h4></label>
-                        <input type="text" class="form-control mb-5" id="assignee" placeholder="e.g. Elon Musk">
-                        
-                        <label for="due"><h4>Due date</h4></label>
-                        <input type="date" class="float-right" id="due" name="due-date" value="2022-01-22" min="2018-01-01" max="2022-01-31">
-                    </div>
+                        <div class="">
+                            <label for="task" class="form-label">
+                                <h4>Task Name</h4>
+                            </label>
+                            <input type="text" class="form-control mb-5" id="task"
+                                placeholder="Is this task S.M.A.R.T.">
 
-            </div>
-            
-            <div class="col-lg-6">
-                <div class="mb-5">
-                    <label for="description" class="form-label"><h4>Task Description</h4></label>
-                    <textarea rows="7" style="height:100%;" class="mb-4 form-control form-text text-muted mb-2" id="description">Description
+                            <label for="assignee" class="form-label">
+                                <h4>Assigned To</h4>
+                            </label>
+                            <input type="text" class="form-control mb-5" id="assignee" placeholder="e.g. Elon Musk">
+
+                            <label for="due">
+                                <h4>Due date</h4>
+                            </label>
+                            <input type="date" class="float-right" id="due" name="due-date" value="2022-01-22"
+                                min="2018-01-01" max="2022-01-31">
+                        </div>
+
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="mb-5">
+                        <label for="description" class="form-label">
+                            <h4>Task Description</h4>
+                        </label>
+                        <textarea rows="7" style="height:100%;" class="mb-4 form-control form-text text-muted mb-2"
+                            id="description">Description
                     </textarea>
-                    <div class="mb-3">
-                        <button type="submit" class="btn btn-primary" id="submit-form" style="width: 100%;">
-                            Add Task</button>
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-primary" id="submit-form" style="width: 100%;">
+                                Add Task</button>
+                        </div>
                     </div>
                 </div>
-            </div><!--End Column Right-->   
+                <!--End Column Right-->
 
-                </form><!--End Form-->
+                </form>
+                <!--End Form-->
 
-        </div><!--End row-->
-    </div><!--End Container-->
-    </section>    
+            </div>
+            <!--End row-->
+        </div>
+        <!--End Container-->
+    </section>
 
-    <section id="task-list" class="jumbotron mb-0">
+    <section id="task-list" class="jumbotron">
         <div class="container">
             <h2 class="mb-5">Tasks</h2>
 
-            <!--Begin Task Cards-->        
-        
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <div class="dropdown">
-                                <button class="btn dropdown-toggle float-right" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Status
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item active" href="#">To-Do</a>
-                                    <a class="dropdown-item" href="#">In Progress</a>
-                                    <a class="dropdown-item" href="#">Review</a>
-                                    <a class="dropdown-item" href="#">Done</a>
-                                </div>
+            <!--Begin Task Cards-->
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="btn text-muted float-left">
+                                {due}
                             </div>
-                        
-                            <h5>Task Name</h5>
-                            <p class="card-text text-truncate"><em>Task Description truncated</em></p>
-                            <h6 class="text-muted">Assigned To</h6>
-                            <small class="badge badge-warning">assignee</small>
-                            <small class="badge badge-danger">assignee2</small>
-                        
-                            <h6 class="mt-3 mb-0">Due</h6>
-                            <small class="">01/25/22</small>
-                        </div>
-                    </div>
-                </div><!-- End Left Column-->
-
-                <div class="col-sm-6">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <div class="dropdown">
-                                <button class="btn dropdown-toggle float-right" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Status
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item active" href="#">To-Do</a>
-                                    <a class="dropdown-item" href="#">In Progress</a>
-                                    <a class="dropdown-item" href="#">Review</a>
-                                    <a class="dropdown-item" href="#">Done</a>
-                                </div>
+                            <div class="btn float-right" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Status
                             </div>
-                        
-                            <h5>Task Name</h5>
-                            <p class="card-text text-truncate"><em>Task Description truncated. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using</em></p>
-                            <h6 class="text-muted">Assigned To</h6>
-                            <small class="badge badge-warning">assignee</small>
-                            <small class="badge badge-danger">assignee2</small>
-                        
-                            <h6 class="mt-3 mb-0">Due</h6>
-                            <small class="">01/25/22</small>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item active" href="#">To-Do</a>
+                                <a class="dropdown-item" href="#">In Progress</a>
+                                <a class="dropdown-item" href="#">Review</a>
+                                <a class="dropdown-item" href="#">Done</a>
+                            </div>
                         </div>
+                
+                    <!--Begin Card Body-->
+                    <div class="card-body">
+                        <h4 class="card-title">{Task Name}</h4>
+                        <p class="card-text">{Task Description}</p>
+                        <a href="#" class="badge badge-warning">
+                            {Assignee}</a>
                     </div>
-                </div><!-- End Right Column-->
-            </div><!--End Card Row-->
-        </div><!--End Container-->
-    </section><!--End #task-list Section-->
+                </li>
 
+        <!-- Task Card 2-->
+        <li class="list-group-item">
+            <div class="card">
+                <div class="card-header">
+                    <div class="btn text-muted float-left">
+                        {due}
+                    </div>
+                    <div class="btn float-right" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Status
+                    </div>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item active" href="#">To-Do</a>
+                        <a class="dropdown-item" href="#">In Progress</a>
+                        <a class="dropdown-item" href="#">Review</a>
+                        <a class="dropdown-item" href="#">Done</a>
+                    </div>
+                </div>
         
-      
+            <!--Begin Card Body-->
+            <div class="card-body">
+                <h4 class="card-title">{Task Name}</h4>
+                <p class="card-text">{Task Description}</p>
+                <a href="#" class="badge badge-warning">
+                    {Assignee}</a>
+            </div>
+        </li>
+
+        <!--Task Card 3-->
+        <li class="list-group-item">
+            <div class="card">
+                <div class="card-header">
+                    <div class="btn text-muted float-left">
+                        {due}
+                    </div>
+                    <div class="btn float-right" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Status
+                    </div>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item active" href="#">To-Do</a>
+                        <a class="dropdown-item" href="#">In Progress</a>
+                        <a class="dropdown-item" href="#">Review</a>
+                        <a class="dropdown-item" href="#">Done</a>
+                    </div>
+                </div>
+        
+            <!--Begin Card Body-->
+            <div class="card-body">
+                <h4 class="card-title">{Task Name}</h4>
+                <p class="card-text">{Task Description}</p>
+                <a href="#" class="badge badge-warning">
+                    {Assignee}</a>
+            </div>
+        </li>
+
+        <!-- Task Card 4 -->
+        <li class="list-group-item">
+            <div class="card">
+                <div class="card-header">
+                    <div class="btn text-muted float-left">
+                        {due}
+                    </div>
+                    <div class="btn float-right" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Status
+                    </div>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item active" href="#">To-Do</a>
+                        <a class="dropdown-item" href="#">In Progress</a>
+                        <a class="dropdown-item" href="#">Review</a>
+                        <a class="dropdown-item" href="#">Done</a>
+                    </div>
+                </div>
+        
+            <!--Begin Card Body-->
+            <div class="card-body">
+                <h4 class="card-title">{Task Name}</h4>
+                <p class="card-text">{Task Description}</p>
+                <a href="#" class="badge badge-warning">
+                    {Assignee}</a>
+            </div>
+        </li>
+
+        <!--Task Card 5-->
+        <li class="list-group-item">
+            <div class="card">
+                <div class="card-header">
+                    <div class="btn text-muted float-left">
+                        {due}
+                    </div>
+                    <div class="btn float-right" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Status
+                    </div>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item active" href="#">To-Do</a>
+                        <a class="dropdown-item" href="#">In Progress</a>
+                        <a class="dropdown-item" href="#">Review</a>
+                        <a class="dropdown-item" href="#">Done</a>
+                    </div>
+                </div>
+        
+            <!--Begin Card Body-->
+            <div class="card-body">
+                <h4 class="card-title">{Task Name}</h4>
+                <p class="card-text">{Task Description}</p>
+                <a href="#" class="badge badge-warning">
+                    {Assignee}</a>
+            </div>
+        </li>
+
+        </ul>
+        <!--End Container-->
+    </section>
+    <!--End #task-list Section-->
+
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
 </html>
