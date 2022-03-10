@@ -1,4 +1,6 @@
-function validFormFieldInput() {
+function validFormFieldInput(event) {
+  event.preventDefault();
+
   const taskElement = document.getElementById('task');
   const taskValue = taskElement.value;
   console.log("Task Name: "+taskValue);
@@ -16,4 +18,5 @@ function validFormFieldInput() {
   console.log("Task Description: "+descriptionValue);
 }
 
-document.getElementById('submit-form').onclick = validFormFieldInput;
+submitElement = document.getElementById('submit-form');
+submitElement.addEventListener("click", validFormFieldInput);
