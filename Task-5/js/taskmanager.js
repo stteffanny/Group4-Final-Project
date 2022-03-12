@@ -3,18 +3,23 @@
 //application, and connecting up the New Task form to create tasks.
 
 class TaskManager {
-    constructor(currentId,tasks) {
-        tasks = [];
-        currentId = 0;
-        
-        this.tasks = tasks;
+    
+    constructor(currentId=0) {
+        this.tasks = [];
         this.currentId = currentId;
-        this.addTask = function (taskValue, descriptionValue, assigneeValue, dueValue, status) {
-            this.currentId++;
-            this.status = "TODO"
-            this.tasks.push(taskValue,descriptionValue,assigneeValue,dueValue,status,currentId)
-         };
     }
-};
-test =  new TaskManager().addTask('taskname','description','Pete', 'March', 'TODO')
-console.log(test)
+       addTask(taskValue, descriptionValue, assigneeValue, dueValue) {
+                      
+            const task = {
+                name: taskValue,
+                description: descriptionValue,
+                due: dueValue,
+                assignee: assigneeValue,
+                status: 'TODO',
+                id: this.currentId++
+            }
+
+            this.tasks.push(task)
+            console.log(this.tasks)
+         }
+    };
