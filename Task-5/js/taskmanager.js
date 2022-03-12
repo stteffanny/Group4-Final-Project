@@ -2,14 +2,12 @@
 //adding a method to the class to keep track of tasks in our 
 //application, and connecting up the New Task form to create tasks.
 
-class TaskManager {
-    
+class TaskManager {    
     constructor(currentId=0) {
         this.tasks = [];
         this.currentId = currentId;
     }
-       addTask(taskValue, descriptionValue, assigneeValue, dueValue) {
-                      
+    addTask(taskValue, descriptionValue, assigneeValue, dueValue) {                      
             const task = {
                 name: taskValue,
                 description: descriptionValue,
@@ -18,8 +16,7 @@ class TaskManager {
                 status: 'TODO',
                 id: this.currentId++
             }
-
-            this.tasks.push(task)
-            console.log(this.tasks)
+            this.tasks.push(task);
+            console.log(this.tasks);
          }
     };
