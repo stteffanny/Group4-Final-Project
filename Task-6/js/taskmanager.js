@@ -1,7 +1,8 @@
 //For this task, we'll be creating a class to manage the tasks, 
 //adding a method to the class to keep track of tasks in our 
 //application, and connecting up the New Task form to create tasks.
-const createTaskHtml = (name, description, assignee, dueDate, status) => {
+
+createTaskHtml = (name, description, assignee, dueDate, status) => {
     const html = `
     <li class="list-group-item">
     <div class="task card">
@@ -28,14 +29,18 @@ const createTaskHtml = (name, description, assignee, dueDate, status) => {
         <a href="#" class="badge badge-warning">
             ${assignee}</a>
     </div>
-</li>`;  return html;
-};
+</li>`;
+return html;
+}
 
 class TaskManager {    
     constructor(currentId=0) {
         this.tasks = [];
         this.currentId = currentId;
     }
+
+    
+
     addTask(name, description, assignee, dueDate) {                      
             const task = {
                 name: name,

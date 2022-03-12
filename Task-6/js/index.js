@@ -1,4 +1,5 @@
-const tasker = new TaskManager;
+const _taskManager = new TaskManager;
+taskHtml = createTaskHtml()
 
 function validFormFieldInput(event) {
     event.preventDefault();
@@ -82,7 +83,8 @@ function validFormFieldInput(event) {
       alertElement.innerHTML = "Don't forget to enter a description!";
       return false;
     }
-    tasker.addTask(taskValue, descriptionValue, assigneeValue, dueValue);
+    _taskManager.addTask(taskValue, descriptionValue, assigneeValue, dueValue);
+    console.log(taskHtml)
     
   }
   
