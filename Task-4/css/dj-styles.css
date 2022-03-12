@@ -1,0 +1,10 @@
+/* Css Styles Derrick */
+
+.list-group {
+    box-sizing: content-box;
+    padding: 0rem;   
+}
+
+.list-group-item {
+    padding: 0rem;
+}
