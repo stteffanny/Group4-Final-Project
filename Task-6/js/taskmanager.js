@@ -34,7 +34,7 @@ return html;
 }
 
 class TaskManager {    
-    constructor(currentId=0) {
+    constructor(currentId = 0) {
         this.tasks = [];
         this.currentId = currentId;
     }

@@ -1,5 +1,5 @@
 const _taskManager = new TaskManager;
-taskHtml = createTaskHtml()
+const taskHtml = createTaskHtml()
 
 function validFormFieldInput(event) {
     event.preventDefault();
