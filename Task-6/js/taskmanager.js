@@ -21,7 +21,7 @@ createTaskHtml = (name, description, assignee, dueDate, status) => {
         <p class="card-text">${description}</p>
         <a href="#" class="badge badge-warning">
             ${assignee}</a>
-        <button type="button" class="btn btn-success float-right">Mark As Done</button>
+        <button type="button" class="btn btn-success done-button float-right">Mark As Done</button>
     </div>
 </li>`;
     return html;
@@ -54,15 +54,6 @@ class TaskManager {
             tasksHtmlList.push(taskHtml);
         };
         let tasksHtml = tasksHtmlList.join('\n');
-        document.getElementById('render-task-list').innerHTML = tasksHtml;
+        document.querySelector('#render-task-list').innerHTML = tasksHtml;
     };
-}; let tasksHtmlList = [];
-for (let i = 0; i < this.tasks.length; i++) {
-    let currentTask = this.tasks[i];
-    let date = new Date(currentTask.due);
-    let formattedDate = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
-    let taskHtml = createTaskHtml(currentTask.name, currentTask.description, currentTask.assignee, formattedDate, currentTask.status);
-    tasksHtmlList.push(taskHtml);
 };
-let tasksHtml = tasksHtmlList.join('\n');
-document.getElementById('render-task-list').innerHTML = tasksHtml;
