@@ -56,4 +56,15 @@ class TaskManager {
         let tasksHtml = tasksHtmlList.join('\n');
         document.querySelector('#render-task-list').innerHTML = tasksHtml;
     };
+
+    getTaskById(taskId) {
+        let foundTask;
+        for(let i = 0; i < this.tasks.length; i++) {
+            let task = this.tasks[i];
+            if(taskId === task.id) {
+                foundTask = task;
+            };
+        };
+        return foundTask;
+    };
 };
