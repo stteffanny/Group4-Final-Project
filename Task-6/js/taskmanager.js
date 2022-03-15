@@ -21,6 +21,7 @@ createTaskHtml = (name, description, assignee, dueDate, status) => {
         <p class="card-text">${description}</p>
         <a href="#" class="badge badge-warning">
             ${assignee}</a>
+        <button type="button" class="btn btn-success float-right">Mark As Done</button>
     </div>
 </li>`;
     return html;
