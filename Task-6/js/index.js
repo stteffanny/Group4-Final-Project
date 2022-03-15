@@ -1,5 +1,4 @@
 const _taskManager = new TaskManager;
-const taskHtml = createTaskHtml()
 
 function validFormFieldInput(event) {
     event.preventDefault();
@@ -84,8 +83,8 @@ function validFormFieldInput(event) {
       return false;
     }
     _taskManager.addTask(taskValue, descriptionValue, assigneeValue, dueValue);
-    console.log(taskHtml)
-    
+    console.log(_taskManager.tasks);
+    _taskManager.render();    
   }
   
   
