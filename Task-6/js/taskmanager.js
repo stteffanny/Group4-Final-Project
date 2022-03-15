@@ -52,5 +52,18 @@ class TaskManager {
             }
             this.tasks.push(task);
             console.log(this.tasks);
-         }
+    }
+
+    render() {
+        let tasksHtmlList = [];
+        for(i = 0; i < this.tasks.length; i++) {
+            let currentTask = this.tasks[i];
+            let date = new Date(currentTask.due);
+            let formattedDate = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+            let taskHtml = createTaskHtml(currentTask.name, currentTask.description, currentTask.assignee, formattedDate, currentTask.status);
+            tasksHtmlList.push(taskHtml);
+        };
+        let tasksHtml = tasksHtmlList.join('\n')
+        document.querySelector('render-task-list').innerHTML = tasksHtml;
     };
+};
