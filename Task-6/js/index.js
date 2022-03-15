@@ -98,6 +98,11 @@ function validFormFieldInput(event) {
     // console.log(event.target.classList);
     if(event.target.classList.contains('done-button')) {
       let parentTask = event.target.parentElement.parentElement.parentElement;
-      console.log(parentTask);
+      // console.log(parentTask);
+      let taskId = Number(parentTask.getAttribute('data-task-id'));
+      // console.log(taskId);
+      let task = _taskManager.getTaskById(taskId);
+      task.status = 'DONE';
+      _taskManager.render();
     }
   })
