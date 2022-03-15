@@ -48,7 +48,8 @@
                             <label for="due">
                                 <h4>Due date</h4>
                             </label>
-                            <input type="date" class="float-right" id="due" name="due-date" min="2018-01-01" max="2022-01-31">
+                            <input type="date" class="float-right" id="due" name="due-date" min="2021-01-01"
+                                max="2025-01-31">
                         </div>
 
                 </div>
@@ -69,7 +70,7 @@
                 </div>
                 <!--End Column Right-->
 
-            </form>
+                </form>
                 <!--End Form-->
 
             </div>
@@ -83,148 +84,8 @@
             <h2 class="mb-5">Tasks</h2>
 
             <!--Begin Task Cards-->
-            <ul id="render-task-list" class="list-group">
-                <li class="list-group-item">
-                    <div class="task card">
-                        <div class="card-header">
-                            <div class="btn text-muted float-left">
-                                {due}
-                            </div>
-                            <div class="btn float-right" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                                Status
-                            </div>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item active" href="#">To-Do</a>
-                                <a class="dropdown-item" href="#">In Progress</a>
-                                <a class="dropdown-item" href="#">Review</a>
-                                <a class="dropdown-item" href="#">Done</a>
-                            </div>
-                        </div>
-                
-                    <!--Begin Card Body-->
-                    <div class="card-body">
-                        <h4 class="card-title">{Task Name}</h4>
-                        <p class="card-text">{Task Description}</p>
-                        <a href="#" class="badge badge-warning">
-                            {Assignee}</a>
-                    </div>
-                </li>
-
-        <!-- Task Card 2-->
-        <li class="list-group-item">
-            <div class="task card">
-                <div class="card-header">
-                    <div class="btn text-muted float-left">
-                        {due}
-                    </div>
-                    <div class="btn float-right" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Status
-                    </div>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item active" href="#">To-Do</a>
-                        <a class="dropdown-item" href="#">In Progress</a>
-                        <a class="dropdown-item" href="#">Review</a>
-                        <a class="dropdown-item" href="#">Done</a>
-                    </div>
-                </div>
-        
-            <!--Begin Card Body-->
-            <div class="card-body">
-                <h4 class="card-title">{Task Name}</h4>
-                <p class="card-text">{Task Description}</p>
-                <a href="#" class="badge badge-warning">
-                    {Assignee}</a>
-            </div>
-        </li>
-
-        <!--Task Card 3-->
-        <li class="list-group-item">
-            <div class="task card">
-                <div class="card-header">
-                    <div class="btn text-muted float-left">
-                        {due}
-                    </div>
-                    <div class="btn float-right" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Status
-                    </div>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item active" href="#">To-Do</a>
-                        <a class="dropdown-item" href="#">In Progress</a>
-                        <a class="dropdown-item" href="#">Review</a>
-                        <a class="dropdown-item" href="#">Done</a>
-                    </div>
-                </div>
-        
-            <!--Begin Card Body-->
-            <div class="card-body">
-                <h4 class="card-title">{Task Name}</h4>
-                <p class="card-text">{Task Description}</p>
-                <a href="#" class="badge badge-warning">
-                    {Assignee}</a>
-            </div>
-        </li>
-
-        <!-- Task Card 4 -->
-        <li class="list-group-item">
-            <div class=" task card">
-                <div class="card-header">
-                    <div class="btn text-muted float-left">
-                        {due}
-                    </div>
-                    <div class="btn float-right" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Status
-                    </div>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item active" href="#">To-Do</a>
-                        <a class="dropdown-item" href="#">In Progress</a>
-                        <a class="dropdown-item" href="#">Review</a>
-                        <a class="dropdown-item" href="#">Done</a>
-                    </div>
-                </div>
-        
-            <!--Begin Card Body-->
-            <div class="card-body">
-                <h4 class="card-title">{Task Name}</h4>
-                <p class="card-text">{Task Description}</p>
-                <a href="#" class="badge badge-warning">
-                    {Assignee}</a>
-            </div>
-        </li>
-
-        <!--Task Card 5-->
-        <li class="list-group-item">
-            <div class="task card">
-                <div class="card-header">
-                    <div class="btn text-muted float-left">
-                        {due}
-                    </div>
-                    <div class="btn float-right" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Status
-                    </div>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item active" href="#">To-Do</a>
-                        <a class="dropdown-item" href="#">In Progress</a>
-                        <a class="dropdown-item" href="#">Review</a>
-                        <a class="dropdown-item" href="#">Done</a>
-                    </div>
-                </div>
-        
-            <!--Begin Card Body-->
-            <div class="card-body">
-                <h4 class="card-title">{Task Name}</h4>
-                <p class="card-text">{Task Description}</p>
-                <a href="#" class="badge badge-warning">
-                    {Assignee}</a>
-            </div>
-        </li>
-
-        </ul>
-        <!--End Container-->
+            <ul id="render-task-list" class="list-group"></ul>
+            <!--End Container-->
     </section>
     <!--End #task-list Section-->
 

@@ -7,18 +7,11 @@ createTaskHtml = (name, description, assignee, dueDate, status) => {
     <li class="list-group-item">
     <div class="task card">
         <div class="card-header">
-            <div class="btn text-muted float-left">
-                ${dueDate}
+            <div class="float-left">
+                Due : ${dueDate}
             </div>
-            <div class="btn float-right" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                Status
-            </div>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item active" href="#">${status}</a>
-                <a class="dropdown-item" href="#">In Progress</a>
-                <a class="dropdown-item" href="#">Review</a>
-                <a class="dropdown-item" href="#">Done</a>
+            <div class="float-right">
+                Status: <span class="badge badge-primary">${status}</span>
             </div>
         </div>
 
@@ -30,33 +23,29 @@ createTaskHtml = (name, description, assignee, dueDate, status) => {
             ${assignee}</a>
     </div>
 </li>`;
-return html;
+    return html;
 }
 
-class TaskManager {    
+class TaskManager {
     constructor(currentId = 0) {
         this.tasks = [];
         this.currentId = currentId;
     }
-
-    
-
-    addTask(name, description, assignee, dueDate) {                      
-            const task = {
-                name: name,
-                description: description,
-                due: dueDate,
-                assignee: assignee,
-                status: 'TODO',
-                id: this.currentId++
-            }
-            this.tasks.push(task);
-            console.log(this.tasks);
+    addTask(name, description, assignee, dueDate) {
+        const task = {
+            name: name,
+            description: description,
+            due: dueDate,
+            assignee: assignee,
+            status: 'TODO',
+            id: this.currentId++
+        }
+        this.tasks.push(task);
+        //console.log(this.tasks);
     }
-
     render() {
         let tasksHtmlList = [];
-        for(let i = 0; i < this.tasks.length; i++) {
+        for (let i = 0; i < this.tasks.length; i++) {
             let currentTask = this.tasks[i];
             let date = new Date(currentTask.due);
             let formattedDate = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
@@ -66,4 +55,13 @@ class TaskManager {
         let tasksHtml = tasksHtmlList.join('\n');
         document.getElementById('render-task-list').innerHTML = tasksHtml;
     };
+}; let tasksHtmlList = [];
+for (let i = 0; i < this.tasks.length; i++) {
+    let currentTask = this.tasks[i];
+    let date = new Date(currentTask.due);
+    let formattedDate = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+    let taskHtml = createTaskHtml(currentTask.name, currentTask.description, currentTask.assignee, formattedDate, currentTask.status);
+    tasksHtmlList.push(taskHtml);
 };
+let tasksHtml = tasksHtmlList.join('\n');
+document.getElementById('render-task-list').innerHTML = tasksHtml;
