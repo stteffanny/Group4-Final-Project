@@ -1,4 +1,0 @@
-language = "html"
-run = ""
-
-entrypoint = "src/Task-4/index.html"
