@@ -2,9 +2,9 @@
 //adding a method to the class to keep track of tasks in our 
 //application, and connecting up the New Task form to create tasks.
 
-createTaskHtml = (name, description, assignee, dueDate, status) => {
+createTaskHtml = (name, description, assignee, dueDate, status, id) => {
     const html = `
-    <li class="list-group-item">
+    <li class="list-group-item" data-task-id="${id}">
     <div class="task card">
         <div class="card-header">
             <div class="float-left">
@@ -21,6 +21,7 @@ createTaskHtml = (name, description, assignee, dueDate, status) => {
         <p class="card-text">${description}</p>
         <a href="#" class="badge badge-warning">
             ${assignee}</a>
+        <button type="button" class="btn btn-success done-button float-right">Mark As Done</button>
     </div>
 </li>`;
     return html;
@@ -49,19 +50,21 @@ class TaskManager {
             let currentTask = this.tasks[i];
             let date = new Date(currentTask.due);
             let formattedDate = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
-            let taskHtml = createTaskHtml(currentTask.name, currentTask.description, currentTask.assignee, formattedDate, currentTask.status);
+            let taskHtml = createTaskHtml(currentTask.name, currentTask.description, currentTask.assignee, formattedDate, currentTask.status, currentTask.id);
             tasksHtmlList.push(taskHtml);
         };
         let tasksHtml = tasksHtmlList.join('\n');
-        document.getElementById('render-task-list').innerHTML = tasksHtml;
+        document.querySelector('#render-task-list').innerHTML = tasksHtml;
     };
-}; let tasksHtmlList = [];
-for (let i = 0; i < this.tasks.length; i++) {
-    let currentTask = this.tasks[i];
-    let date = new Date(currentTask.due);
-    let formattedDate = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
-    let taskHtml = createTaskHtml(currentTask.name, currentTask.description, currentTask.assignee, formattedDate, currentTask.status);
-    tasksHtmlList.push(taskHtml);
+
+    getTaskById(taskId) {
+        let foundTask;
+        for(let i = 0; i < this.tasks.length; i++) {
+            let task = this.tasks[i];
+            if(taskId === task.id) {
+                foundTask = task;
+            };
+        };
+        return foundTask;
+    };
 };
-let tasksHtml = tasksHtmlList.join('\n');
-document.getElementById('render-task-list').innerHTML = tasksHtml;

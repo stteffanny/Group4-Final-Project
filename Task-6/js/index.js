@@ -3,22 +3,22 @@ const _taskManager = new TaskManager;
 function validFormFieldInput(event) {
     event.preventDefault();
 
-    alertElement = document.getElementById('bootstrap-alert');
+    alertElement = document.querySelector('#bootstrap-alert');
     alertElement.hidden = true;
   
-    const taskElement = document.getElementById('task');
+    const taskElement = document.querySelector('#task');
     const taskValue = taskElement.value;
     //console.log("Task Name: "+taskValue);
     
-    const assigneeElement = document.getElementById('assignee');
+    const assigneeElement = document.querySelector('#assignee');
     const assigneeValue = assigneeElement.value;
     //console.log("Assigned To: "+assigneeValue);
   
-    const dueElement = document.getElementById('due');
+    const dueElement = document.querySelector('#due');
     const dueValue = dueElement.value;
     //console.log("Due Date: "+dueValue);
   
-    const descriptionElement = document.getElementById('description');
+    const descriptionElement = document.querySelector('#description');
     const descriptionValue = descriptionElement.value;
     //console.log("Task Description: "+descriptionValue);
   
@@ -83,11 +83,26 @@ function validFormFieldInput(event) {
       return false;
     }
     _taskManager.addTask(taskValue, descriptionValue, assigneeValue, dueValue);
-    console.log(_taskManager.tasks);
+    // console.log(_taskManager.tasks);
     _taskManager.render();    
   }
   
   
 
-  submitElement = document.getElementById('submit-form');
+  submitElement = document.querySelector('#submit-form');
   submitElement.addEventListener("click", validFormFieldInput);
+
+  
+  let renderList = document.querySelector('#render-task-list');
+  renderList.addEventListener("click", (event) => {
+    // console.log(event.target.classList);
+    if(event.target.classList.contains('done-button')) {
+      let parentTask = event.target.closest('li');
+      // console.log(parentTask);
+      let taskId = Number(parentTask.getAttribute('data-task-id'));
+      // console.log(taskId);
+      let task = _taskManager.getTaskById(taskId);
+      task.status = 'DONE';
+      _taskManager.render();
+    }
+  })
