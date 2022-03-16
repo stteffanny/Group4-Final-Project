@@ -97,7 +97,7 @@ function validFormFieldInput(event) {
   renderList.addEventListener("click", (event) => {
     // console.log(event.target.classList);
     if(event.target.classList.contains('done-button')) {
-      let parentTask = event.target.parentElement.parentElement.parentElement;
+      let parentTask = event.target.closest('li');
       // console.log(parentTask);
       let taskId = Number(parentTask.getAttribute('data-task-id'));
       // console.log(taskId);
