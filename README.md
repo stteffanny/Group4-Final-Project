@@ -1,28 +1,16 @@
-# Group4-Final-Project
+<div align='center'>
 
-Task 1 Summary (01/25/22) by Daniel R:
-I uploaded a jpg of the wireframe into a folder called Task-1. The page doesn't include too much, 
-but there are two background images used at the top and bottom which I included in a sub-folder titled "images".
-Let me know if you have any questions.
-___
-###### 1/28/22 @flx1derrick
-**Task 2 Summary**  
+![taskmanLogo](https://user-images.githubusercontent.com/95151579/159143414-5217c259-1e08-43a0-8d0a-0e8e7961398a.png)
 
-- Implement the basic HTML structure of Wireframe design  
-- Implement Task planner form  
-- Implement Task Cards  
-- Implement Stylesheet initialized  
-- Resize background images for the web  
-___
+### 🚀 [View Demo](https://guarded-sponge.surge.sh/)
 
-// ###### XX/XX/XX @XXXX
-// **Task X Summary**  
-___
-**Screenshots**  
+# 👨‍💻
 
-#### Task Planner section
-<img src="https://user-images.githubusercontent.com/95151579/151500454-96cd0367-d56c-455f-98d0-6657d1a20cd3.png" width="600" />
+</div>
+This project uses Bootstrap the world’s most popular framework for building responsive, mobile-first sites, with jsDelivr and a template starter page. For persistent storage (database), the app uses built-in localStorage ... To create a new task ...
 
-#### Task Card section
-<img src="https://user-images.githubusercontent.com/95151579/151500456-4fee1ef1-548b-4b85-a02b-8f46199c789b.png" width="600" />
-___
+# ✍️ Collaborators
+
+https://github.com/stteffanny | https://github.com/flx1derrick | https://github.com/abomatucho | https://github.com/rhoadesd94
+
+# ⚠️ License
