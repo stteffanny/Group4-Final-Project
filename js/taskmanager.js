@@ -22,6 +22,7 @@ createTaskHtml = (name, description, assignee, dueDate, status, id) => {
         <a href="#" class="badge badge-warning">
             ${assignee}</a>
         <button type="button" class="btn btn-success done-button float-right">Mark As Done</button>
+        <button type="button" class="btn btn-danger delete-button float-right">Delete</button>
     </div>
 </li>`;
     return html;
@@ -46,8 +47,9 @@ class TaskManager {
     }
 
     deleteTask(taskId) {
+        console.log("The deleteTask method ran")
         let newTasks = [];
-        for(let i = 0; i < this.tasks.length(); i++) {
+        for(let i = 0; i < this.tasks.length; i++) {
             let task = this.tasks[i];
             if(task.id !== taskId) {
                 newTasks.push(task);
@@ -89,8 +91,9 @@ class TaskManager {
     
     load() {
         if(localStorage.getItem('tasks')) {
-           let tasksJson = localStorage.getItem("tasks");
-            this.tasks = JSON.parse(tasksJson);
+            let tasksJson = localStorage.getItem("tasks");
+            this.tasks = JSON.parse(tasksJson)};
+        if(localStorage.getItem('currentId')) {
             let currentId = localStorage.getItem("currentId");
             this.currentId = parseInt(currentId);
         };
