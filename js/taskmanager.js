@@ -22,6 +22,7 @@ createTaskHtml = (name, description, assignee, dueDate, status, id) => {
         <a href="#" class="badge badge-warning">
             ${assignee}</a>
         <button type="button" class="btn btn-success done-button float-right">Mark As Done</button>
+        <button type="button" class="btn btn-danger delete-button float-right">Delete</button>
     </div>
 </li>`;
     return html;
@@ -76,11 +77,12 @@ class TaskManager {
       };
     
       load() {
-          if(localStorage.getItem('tasks')) {
-        let tasksJson = localStorage.getItem("tasks");
-        this.tasks = JSON.parse(tasksJson);
-        let currentId = localStorage.getItem("currentId");
-        this.currentId = parseInt(currentId);
-        }
+        if(localStorage.getItem('tasks')) {
+            let tasksJson = localStorage.getItem("tasks");
+            this.tasks = JSON.parse(tasksJson)};
+        if(localStorage.getItem('currentId')) {
+            let currentId = localStorage.getItem("currentId");
+            this.currentId = parseInt(currentId);
+        };
       };
 };
