@@ -67,4 +67,20 @@ class TaskManager {
         };
         return foundTask;
     };
+
+    save() {
+        let tasksJson = JSON.stringify(this.tasks);
+        localStorage.setItem("tasks", tasksJson);
+        let currentId = JSON.stringify(this.currentId);
+        localStorage.setItem("currentId", currentId);
+      };
+    
+      load() {
+          if(localStorage.getItem('tasks')) {
+        let tasksJson = localStorage.getItem("tasks");
+        this.tasks = JSON.parse(tasksJson);
+        let currentId = localStorage.getItem("currentId");
+        this.currentId = parseInt(currentId);
+        }
+      };
 };

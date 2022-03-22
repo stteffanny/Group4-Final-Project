@@ -1,4 +1,6 @@
 const _taskManager = new TaskManager;
+_taskManager.load();
+_taskManager.render();
 
 function validFormFieldInput(event) {
     event.preventDefault();
@@ -84,6 +86,7 @@ function validFormFieldInput(event) {
     }
     _taskManager.addTask(taskValue, descriptionValue, assigneeValue, dueValue);
     // console.log(_taskManager.tasks);
+    _taskManager.save();
     _taskManager.render();    
   }
   
@@ -103,6 +106,7 @@ function validFormFieldInput(event) {
       // console.log(taskId);
       let task = _taskManager.getTaskById(taskId);
       task.status = 'DONE';
+      _taskManager.save();
       _taskManager.render();
     }
   })
