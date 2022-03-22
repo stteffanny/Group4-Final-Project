@@ -47,7 +47,7 @@ class TaskManager {
     }
 
     deleteTask(taskId) {
-        console.log("The deleteTask method ran")
+        // console.log("The deleteTask method ran")
         let newTasks = [];
         for(let i = 0; i < this.tasks.length; i++) {
             let task = this.tasks[i];
