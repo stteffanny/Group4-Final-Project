@@ -109,4 +109,13 @@ function validFormFieldInput(event) {
       _taskManager.save();
       _taskManager.render();
     }
+    if(event.target.classList.contains('delete-button')) {
+      let parentTask = event.target.closest('li');
+      // console.log(parentTask);
+      let taskId = Number(parentTask.getAttribute('data-task-id'));
+      // console.log(taskId);
+      _taskManager.deleteTask(taskId);
+      _taskManager.save();
+      _taskManager.render();
+    }
   })
