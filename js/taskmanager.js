@@ -33,9 +33,9 @@ class TaskManager {
         this.tasks = [];
         this.currentId = currentId;
     }
-    addTask(name, description, assignee, dueDate) {
+    addTask(taskValue, description, assignee, dueDate) {
         const task = {
-            name: name,
+            name: taskValue,
             description: description,
             due: dueDate,
             assignee: assignee,
@@ -99,3 +99,5 @@ class TaskManager {
         };
       };
 };
+
+module.exports = TaskManager;
