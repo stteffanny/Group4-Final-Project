@@ -33,6 +33,17 @@ describe('TaskManager', () => {
         })
     })
     describe('.getTaskById', () => {
+        it('returns the task from the TaskManager.tasks array that corresponds to the index given', () => {
+            // Setup
+            const _taskManager = new TaskManager;
+            _taskManager.addTask('taskValue', 'description', 'assignee', 'dueDate');
+            const expectedResult = {name: 'taskValue', description: 'description', due: 'dueDate', assignee: 'assignee', status: 'TODO', id: 0};
 
+            // Exercise
+            const result = _taskManager.getTaskById(0);
+
+            // Verify
+            assert.deepEqual(result, expectedResult);
+        })
     })
 });
