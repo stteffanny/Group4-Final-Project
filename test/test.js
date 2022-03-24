@@ -3,34 +3,34 @@ const { isTypedArray } = require('util/types');
 const TaskManager = require('../js/taskmanager.js');
 
 describe('TaskManager', () => {
-    // beforeEach(() => {
-    //     const _taskManager = new TaskManager;
-    //     console.log(Object.getOwnPropertyNames(_taskManager));
-    // })
     describe('.addTask', () => {
         it('adds the task to the TaskManager.tasks array', () => {
-        // Setup
-        // const input = {
-        //     name: taskValue,
-        //     description: description,
-        //     due: dueDate,
-        //     assignee: assignee,
-        //     status: 'TODO',
-        //     id: _taskManager.currentId++
-        // };
-        const _taskManager = new TaskManager;
-        const expectedResult = {name: 'taskValue', description: 'description', due: 'dueDate', assignee: 'assignee', status: 'TODO', id: 0};
+            // Setup
+            const _taskManager = new TaskManager;
+            const expectedResult = {name: 'taskValue', description: 'description', due: 'dueDate', assignee: 'assignee', status: 'TODO', id: 0};
 
-        // Exercise
-        _taskManager.addTask('taskValue', 'description', 'assignee', 'dueDate');
-        const result = _taskManager.tasks[0];
+            // Exercise
+            _taskManager.addTask('taskValue', 'description', 'assignee', 'dueDate');
+            const result = _taskManager.tasks[0];
 
-        // Verify
-        assert.deepEqual(result, expectedResult);
+            // Verify
+            assert.deepEqual(result, expectedResult);
         })
     })
     describe('.deleteTask', () => {
+        it('deletes the task from the TaskManager.tasks array', () => {
+            //Setup
+            const _taskManager = new TaskManager;
+            _taskManager.addTask('taskValue', 'description', 'assignee', 'dueDate');
+            const expectedResult = undefined;
 
+            // Exercise
+            _taskManager.deleteTask(0);
+            const result = _taskManager.tasks[0];
+
+            // Verify
+            assert.equal(result, expectedResult);
+        })
     })
     describe('.getTaskById', () => {
 
