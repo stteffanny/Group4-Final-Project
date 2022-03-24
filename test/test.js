@@ -1,8 +1,34 @@
 const assert = require('assert');
+const exp = require('constants');
 const { isTypedArray } = require('util/types');
 const TaskManager = require('../js/taskmanager.js');
 
 describe('TaskManager', () => {
+    describe('constructor', () => {
+        it('creates a TaskManager object with the .tasks property as an empty array', () => {
+            // Setup
+            const expectedResult = [];
+
+            // Exercise
+            const _taskManager = new TaskManager;
+            const result = _taskManager.tasks;
+
+            // Verify
+            assert.deepEqual(result, expectedResult);
+
+        })
+        it('creates a TaskManager object with the .currentId property equal to the argument passed (by default, 0)', () => {
+            // Setup
+            const expectedResult = 0;
+
+            // Exercise
+            const _taskManager = new TaskManager;
+            const result = _taskManager.currentId;
+
+            // Verify
+            assert.equal(result, expectedResult);
+        })
+    })
     describe('.addTask', () => {
         it('adds the task to the TaskManager.tasks array', () => {
             // Setup
