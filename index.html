@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Task List</title>
+    <title>TaskApp</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,16 +13,17 @@
     <!--<link rel="stylesheet" href="css/reset.css"> -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/dj-styles.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nunito" />
     <script src="./js/taskmanager.js" defer></script>
     <script src="./js/index.js" defer></script>
 </head>
 
 <body>
 
-    <section id="header" class="jumbotron border-bottom">
+    <section id="header" class="border-bottom">
         <div class="container">
-            <div class="d-flex justify-content-center">
-                <h1 class="">Task List</h1>
+            <div class="mt-3 mb-1 d-flex justify-content-center">
+                <h1 class="">TaskApp</h1>
             </div>
         </div>
     </section>
@@ -31,25 +32,20 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
+                    <h2 class="strong">Add a Task ...</h2>
                     <form id="task-form">
 
                         <div class="">
                             <label for="task" class="form-label">
-                                <h4>Task Name</h4>
                             </label>
-                            <input type="text" class="form-control mb-5" id="task"
-                                placeholder="Is this task S.M.A.R.T.">
+                            <input type="text" class="form-control mb-5" id="task" placeholder="New Task">
 
-                            <label for="assignee" class="form-label">
-                                <h4>Assigned To</h4>
-                            </label>
-                            <input type="text" class="form-control mb-5" id="assignee" placeholder="e.g. Elon Musk">
+                            <label for="assignee" class="form-label"></label>
+                            <input type="text" class="form-control mb-5" id="assignee" placeholder="Assigned To">
 
-                            <label for="due">
-                                <h4>Due date</h4>
+                            <label for="due">Due date
                             </label>
-                            <input type="date" class="float-right" id="due" name="due-date" min="2021-01-01"
-                                max="2025-01-31">
+                            <input type="date" class="mx-3" id="due" name="due-date" min="2021-01-01" max="2025-01-31">
                         </div>
 
                 </div>
@@ -57,10 +53,9 @@
                 <div class="col-lg-6">
                     <div class="mb-5">
                         <label for="description" class="form-label">
-                            <h4>Task Description</h4>
                         </label>
                         <textarea rows="7" style="height:100%;" class="mb-4 form-control form-text text-muted mb-2"
-                            id="description" placeholder="Describe your task here..."></textarea>
+                            id="description" placeholder="Describe your task"></textarea>
                         <div class="mb-3">
                             <button type="submit" class="btn btn-primary" id="submit-form" style="width: 100%;">
                                 Add Task</button>
@@ -79,9 +74,9 @@
         <!--End Container-->
     </section>
 
-    <section id="task-list" class="jumbotron">
+    <section id="task-list" class="">
         <div class="container">
-            <h2 class="mb-5">Tasks</h2>
+            <h2 class="mb-5">Task List</h2>
 
             <!--Begin Task Cards-->
             <ul id="render-task-list" class="list-group"></ul>
